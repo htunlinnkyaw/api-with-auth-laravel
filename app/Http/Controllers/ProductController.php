@@ -18,7 +18,8 @@ class ProductController extends Controller
     public function index()
     {
         $products = $this->productRepository->all();
-        return view('product.index', compact('products'));
+        // return view('product.index', compact('products'));
+        return response()->json(["message" => "Data Fetched Successfully", "data" => $products]);
     }
 
     public function create()
